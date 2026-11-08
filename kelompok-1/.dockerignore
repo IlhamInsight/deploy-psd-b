@@ -1,0 +1,13 @@
+bifore-*
+grafik-*
+*.png
+*.mp4
+*.mpeg
+*.m4a
+*.mp3
+*.ogg
+__pycache__
+.vscode
+.git
+.gitignore
+

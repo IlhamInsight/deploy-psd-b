@@ -1,0 +1,14 @@
+services:
+  klasifikasi_knalpot:
+    build: .
+    container_name: portal_deteksi_knalpot
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1024M # Batas maksimal penggunaan RAM (1 GB)
+        reservations:
+          memory: 256M  # Alokasi RAM minimal
+    mem_limit: 1024M    # Dukungan kompatibilitas Compose versi standalone

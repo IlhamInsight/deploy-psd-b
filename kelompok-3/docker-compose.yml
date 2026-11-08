@@ -1,0 +1,17 @@
+services:
+  sawmill-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    environment:
+      HOST: 0.0.0.0
+      PORT: "5002"
+      WA_NOTIFICATION_ENABLED: ${WA_NOTIFICATION_ENABLED:-false}
+      WA_METHOD: ${WA_METHOD:-webhook}
+      WEBHOOK_URL: ${WEBHOOK_URL:-}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-}
+      WA_TARGET_PHONE: ${WA_TARGET_PHONE:-}
+      FONNTE_TOKEN: ${FONNTE_TOKEN:-}
